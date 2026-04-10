@@ -8,16 +8,19 @@
 
 | ID | Title | Status | Owner |
 |---|---|---|---|
-| P001 | Landing page — coming soon with reveal sequence | READY | MJ |
+| P001 | Landing page — coming soon with reveal sequence | DONE | MJ |
+| P002 | Scroll reveal — brand statement (signature pending) | DONE | MJ |
 
 ---
 
 ## Status Summary
 
 ```
-READY (1):     P001
+DONE (2):         P001, P002
 
-DONE (0):      —
+READY (0):        —
+
+DRAFTS (0):       —
 ```
 
 ---
@@ -25,22 +28,29 @@ DONE (0):      —
 ## What Runs Next
 
 ```
-1. P001 — build the landing page
-2. Push to GitHub, connect Cloudflare Pages, add custom domain
-3. Logo — Madi draws the mark, add to page as P002
+1. Signature — Madi's "mj" signature needs proper vector trace from photo,
+   then SVG draw animation added to section 2 (deferred from P002)
+2. Logo — Madi draws the mark, replace ghost hand watermark (P003)
 ```
+
+---
+
+## Completion Log
+
+| Prompt | Date | Result | Notes |
+|---|---|---|---|
+| P001 | 2026-04-09 | Done | Landing page live on thechurchofink.com. Ink-in-water animation, hand watermark, inscription reveal sequence. |
+| P002 | 2026-04-09 | Done | Scroll reveal with brand statement. Signature SVG deferred — needs proper vector trace of Madi's actual signature. |
 
 ---
 
 ## File Locations
 
 ```
-ready/
-  P001-landing-page.md
-
 done/
-  (none yet)
+  P001-landing-page.md
+  P002-scroll-reveal-statement.md
 
-drafts/
-  (none yet)
+ready/
+  (empty)
 ```

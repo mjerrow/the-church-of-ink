@@ -26,7 +26,10 @@ Push to `main`. Cloudflare Pages auto-deploys.
 ## Key Files
 
 ```
-AGENTS.md                     — brand context, aesthetic, architecture
+index.html                    — the page (two sections, all inline)
+assets/hand-watermark.png     — ghost hand logo concept (background watermark)
+AGENTS.md                     — brand context, page structure, architecture
 CLAUDE.md                     — commit conventions, prompt execution rules
+docs/BRAND-FOUNDATION.md      — full brand story, decisions, theology
 docs/prompts/README.md        — prompt library index
 ```

@@ -24,12 +24,9 @@
     /* --- Body --- */
     body {
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: #0a0a0a;
       font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
-      overflow: hidden;
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -46,18 +43,7 @@
       animation: fade-in 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) 0.8s forwards;
     }
 
-    /* --- Content wrapper --- */
-    .content {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 2rem;
-    }
-
-    /* --- Ink-in-water background --- */
+    /* --- Fixed background layers --- */
     .ink-water {
       position: fixed;
       inset: 0;
@@ -91,7 +77,6 @@
       animation: ink-drift-2 60s ease-in-out infinite;
     }
 
-    /* --- Hand watermark --- */
     .hand-watermark {
       position: fixed;
       top: 50%;
@@ -112,17 +97,47 @@
       opacity: 0.03;
     }
 
+    /* --- Section 1: Hero --- */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
     /* --- Wordmark --- */
     .wordmark {
-      font-size: clamp(1.8rem, 5vw, 3rem);
+      position: relative;
+      font-size: clamp(2rem, 5.5vw, 3.2rem);
       font-weight: 300;
       letter-spacing: 0.35em;
       text-transform: uppercase;
       color: #e8e4e0;
       line-height: 1.2;
       text-align: center;
+    }
+
+    .wordmark .text {
       clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-      animation: inscribe 1s cubic-bezier(0.25, 0.1, 0.25, 1) 1.5s forwards;
+      animation: inscribe 2s cubic-bezier(0.2, 0.0, 0.3, 1) 1.5s forwards;
+      display: block;
+    }
+
+    .wordmark .nib {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(232, 228, 224, 0.6), rgba(123, 94, 167, 0.3), transparent);
+      box-shadow: 0 0 12px 4px rgba(123, 94, 167, 0.15), 0 0 4px 1px rgba(232, 228, 224, 0.2);
+      opacity: 0;
+      animation: nib-move 2s cubic-bezier(0.2, 0.0, 0.3, 1) 1.5s forwards;
     }
 
     /* --- Divider --- */
@@ -132,45 +147,119 @@
       background-color: rgba(232, 228, 224, 0.35);
       margin: 1.5rem auto;
       transform: scaleX(0);
-      animation: draw-line 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) 2.8s forwards;
+      animation: draw-center 0.6s cubic-bezier(0.2, 0.0, 0.3, 1) 3.0s forwards;
     }
 
-    /* --- Tagline --- */
+    /* --- Tagline (word-by-word inscription) --- */
     .tagline {
-      font-size: clamp(0.95rem, 2.5vw, 1.3rem);
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
       font-weight: 300;
       font-style: italic;
       letter-spacing: 0.15em;
       color: rgba(232, 228, 224, 0.65);
-      opacity: 0;
-      transform: translateY(8px);
-      animation: drift-up 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 3.4s forwards;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0 0.35em;
+    }
+
+    .tagline .word {
+      display: inline-block;
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
     }
 
     /* --- Coming Soon --- */
     .coming-soon {
-      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      font-size: clamp(0.9rem, 2vw, 1.15rem);
       font-weight: 300;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: rgba(232, 228, 224, 0.35);
       margin-top: 4rem;
-      opacity: 0;
-      transform: translateY(4px);
-      animation: drift-up 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 5.0s forwards;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
 
     /* --- Scripture reference --- */
     .scripture {
-      font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
       font-weight: 300;
       font-style: italic;
       letter-spacing: 0.08em;
       color: rgba(232, 228, 224, 0.25);
       margin-top: 0.75rem;
-      opacity: 0;
-      animation: fade-in 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 5.5s forwards;
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
     }
+
+    /* --- Scroll indicator --- */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 24px;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .scroll-indicator.visible {
+      opacity: 1;
+    }
+
+    .scroll-indicator.hidden {
+      opacity: 0;
+    }
+
+    .scroll-indicator::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 100%;
+      background: rgba(232, 228, 224, 0.15);
+      animation: ink-drip 2.5s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+    }
+
+    @keyframes ink-drip {
+      0%   { transform: translateY(-100%); opacity: 0; }
+      30%  { opacity: 1; }
+      100% { transform: translateY(100%); opacity: 0; }
+    }
+
+    /* --- Section 2: Statement --- */
+    .statement {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .statement-content {
+      max-width: 580px;
+    }
+
+    .statement-p {
+      font-size: clamp(1.1rem, 2.8vw, 1.35rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.8;
+      color: rgba(232, 228, 224, 0.50);
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    .statement-p + .statement-p {
+      margin-top: 1.5rem;
+    }
+
+    .statement-p.revealed {
+      animation: inscribe 1.5s cubic-bezier(0.2, 0.0, 0.3, 1) forwards;
+    }
+
 
     /* --- Keyframes --- */
     @keyframes inscribe {
@@ -178,19 +267,34 @@
       to   { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
     }
 
-    @keyframes draw-line {
+    @keyframes inscribe-reverse {
+      from { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+      to   { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    }
+
+    @keyframes inscribe-down {
+      from { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+      to   { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    }
+
+    @keyframes inscribe-up {
+      from { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); }
+      to   { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    }
+
+    @keyframes draw-center {
       to { transform: scaleX(1); }
+    }
+
+    @keyframes nib-move {
+      0%   { left: 0%; opacity: 0.8; }
+      5%   { opacity: 1; }
+      90%  { opacity: 0.8; }
+      100% { left: 100%; opacity: 0; }
     }
 
     @keyframes fade-in {
       to { opacity: 1; }
-    }
-
-    @keyframes drift-up {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     @keyframes ink-drift-1 {
@@ -216,19 +320,110 @@
         opacity: 1 !important;
         transform: none !important;
         clip-path: none !important;
+        filter: none !important;
       }
+      .scroll-indicator { display: none; }
     }
   </style>
 </head>
 <body>
-  <main class="content">
-    <div class="ink-water"></div>
-    <div class="hand-watermark"><img src="assets/hand-watermark.png" alt=""></div>
-    <h1 class="wordmark">The Church of Ink</h1>
+  <!-- Fixed background layers -->
+  <div class="ink-water"></div>
+  <div class="hand-watermark"><img src="assets/hand-watermark.png" alt=""></div>
+
+  <!-- Section 1: Hero -->
+  <section class="hero">
+    <h1 class="wordmark">
+      <span class="text">The Church of Ink</span>
+      <span class="nib"></span>
+    </h1>
     <div class="divider"></div>
     <p class="tagline">Sacred work, inscribed on skin.</p>
     <p class="coming-soon">Coming Soon</p>
     <p class="scripture">Isaiah 49:16</p>
-  </main>
+    <div class="scroll-indicator"></div>
+  </section>
+
+  <!-- Section 2: Brand Statement -->
+  <section class="statement">
+    <div class="statement-content">
+      <p class="statement-p">I believe that art done with heart and integrity is an offering — to the person wearing it and to God who gave the talent. Tattoo artistry isn't rebellion. It's a craft built on skill, discipline, and purpose. And when it's done right, it's an act of service.</p>
+      <p class="statement-p">The Church of Ink is where craft becomes calling, and the work itself becomes worship.</p>
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) return;
+
+      var ease = 'cubic-bezier(0.2, 0.0, 0.3, 1)';
+
+      // --- Section 1: Word-by-word tagline inscription ---
+      var tagline = document.querySelector('.tagline');
+      var words = tagline.textContent.trim().split(/\s+/);
+      tagline.textContent = '';
+      var taglineStart = 3.2;
+      var wordDuration = 0.35;
+      var wordGap = 0.1;
+
+      words.forEach(function(word, i) {
+        var span = document.createElement('span');
+        span.className = 'word';
+        span.textContent = word;
+        var delay = taglineStart + i * (wordDuration + wordGap);
+        span.style.animation = 'inscribe-reverse ' + wordDuration + 's ' + ease + ' ' + delay + 's forwards';
+        tagline.appendChild(span);
+      });
+
+      var comingSoon = document.querySelector('.coming-soon');
+      var lastWordStart = taglineStart + (words.length - 1) * (wordDuration + wordGap);
+      var csDelay = lastWordStart + 0.2;
+      comingSoon.style.animation = 'inscribe-down 0.6s ' + ease + ' ' + csDelay + 's forwards';
+
+      var scripture = document.querySelector('.scripture');
+      var scrDelay = csDelay + 0.3;
+      scripture.style.animation = 'inscribe-up 0.5s ' + ease + ' ' + scrDelay + 's forwards';
+
+      // --- Scroll indicator: show after section 1 reveal completes ---
+      var scrollIndicator = document.querySelector('.scroll-indicator');
+      var indicatorDelay = (scrDelay + 0.6) * 1000;
+      setTimeout(function() {
+        scrollIndicator.classList.add('visible');
+      }, indicatorDelay);
+
+      // Hide scroll indicator on first scroll
+      var scrollHidden = false;
+      window.addEventListener('scroll', function() {
+        if (!scrollHidden && window.scrollY > 10) {
+          scrollHidden = true;
+          scrollIndicator.classList.remove('visible');
+          scrollIndicator.classList.add('hidden');
+        }
+      }, { passive: true });
+
+      // --- Section 2: Intersection Observer for statement reveal ---
+      var statementPs = document.querySelectorAll('.statement-p');
+
+      var revealed = false;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !revealed) {
+            revealed = true;
+
+            statementPs[0].classList.add('revealed');
+
+            setTimeout(function() {
+              statementPs[1].classList.add('revealed');
+            }, 2000);
+
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(document.querySelector('.statement'));
+    })();
+  </script>
 </body>
 </html>
