@@ -357,6 +357,25 @@
       100% { transform: translate(0%, 0%) scale(1); }
     }
 
+    /* --- Mobile: boost background visibility --- */
+    @media (max-width: 768px) {
+      .hand-watermark img { opacity: 0.10; }
+      .ink-water::before {
+        background:
+          radial-gradient(ellipse 35% 30% at 45% 50%, rgba(123, 94, 167, 0.28), transparent 70%),
+          radial-gradient(ellipse 25% 35% at 60% 40%, rgba(100, 75, 145, 0.18), transparent 65%),
+          radial-gradient(ellipse 40% 25% at 35% 60%, rgba(80, 65, 120, 0.15), transparent 60%);
+      }
+      .ink-water::after {
+        background:
+          radial-gradient(ellipse 30% 40% at 55% 55%, rgba(123, 94, 167, 0.20), transparent 65%),
+          radial-gradient(ellipse 40% 30% at 40% 45%, rgba(90, 70, 135, 0.15), transparent 60%);
+      }
+      .drip {
+        background: linear-gradient(to bottom, rgba(232, 228, 224, 0.14), rgba(232, 228, 224, 0.05) 40%, transparent);
+      }
+    }
+
     /* --- Reduced motion --- */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {

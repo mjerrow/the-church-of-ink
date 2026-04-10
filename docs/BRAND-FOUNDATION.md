@@ -72,6 +72,44 @@ things before the world is ready to take her seriously.
 
 She is not one-dimensional, and the brand cannot be either.
 
+### Art for things that move
+
+Madi's art does not stop at skin. She wants to design the graphics that go
+on skis and snowboards — and the connection is not a stretch. It is the
+same instinct expressed on a different surface.
+
+The thread that runs through all of it: **she makes art for things that
+move.** Skin moves. Skis move. Boards move. These are not static canvases
+hung on a wall or printed on a shelf. They travel with a person, take
+impact, wear in, become part of someone's story. A tattoo goes where you
+go. A ski top-sheet drops with you off a cornice. The art lives because
+the canvas lives.
+
+This is what separates The Church of Ink from a traditional tattoo brand or
+a traditional design studio. The brand's territory is not a medium — it is
+a relationship between art and motion, between the mark and the person
+carrying it.
+
+The creed holds across every surface: "Art done with heart and integrity is
+an offering" applies to a ski top-sheet the same way it applies to a tattoo.
+The theology does not change. The tagline — "Sacred work, inscribed on
+skin" — anchors the origin. Skin is where it started, skin is the
+theological root. But the brand's larger idea is bigger than any one canvas.
+
+The alignment with Madi's life is natural, not forced. She teaches skiing
+(PSIA Level 1, 50+ days a season, New Zealand plans after graduation). She
+knows the equipment, the culture, the aesthetic, and the people who ride.
+The graphics on a ski or snowboard are an artist's mark on something someone
+carries up a mountain, trusts their body to, and makes memories with. That
+is not a side hustle — it is the same conviction applied to a different
+surface.
+
+Practically, this also gives her a commercial path she can start before she
+is old enough to legally hold a tattoo machine. It connects her two
+professional worlds. It opens a market where faith-rooted creative voices
+are rare. And the hand logo concept gets stronger — hands create, regardless
+of the medium. Hands hold pens on skin, hands grip poles on a mountain.
+
 ### A father's perspective
 
 MJ (her father) wrote the following on LinkedIn after Madi passed her PSIA
@@ -570,26 +608,31 @@ belong in the core brand language stack.
 
 ---
 
-## What This Brand Is Not
+## Brand Boundaries
 
-- Not a ministry organization or a church
-- Not apologizing for tattoos or asking permission from the Christian community
-- Not preachy, not evangelistic in tone, not trying to convert anyone
-- Not corporate, not polished, not vector-clean
-- Not a teenager's side project — this is a serious brand for a serious artist
-  who happens to be 17
-- Not separate from faith — faith is the foundation, not the marketing
-- Not only about tattoo art — Madi is a ski instructor, a business student, an
-  off-roader, an adventurer. The brand represents one dimension of a
-  multidimensional person
+These are not disclaimers or defenses. They are design constraints — lines
+that keep the brand focused and prevent drift.
+
+- **Not a church or ministry.** The name borrows sacred language intentionally,
+  but the brand is a creative practice, not a religious organization.
+- **Not evangelistic in tone.** Faith is the foundation of the work, not the
+  pitch. The brand shows, it does not preach.
+- **Not limited to one canvas.** Skin is the origin and the theological anchor.
+  Skis, boards, and future surfaces are natural extensions — art for things
+  that move.
+- **Not polished or corporate.** The aesthetic is dark, organic, and
+  hand-made. Clean vector, stock photography, and sans-serif minimalism
+  belong to a different brand.
+- **Not one-dimensional.** Madi is an artist, a ski instructor, a business
+  student, an off-roader. The brand carries the artistry; it does not
+  flatten the person behind it.
 
 ## What This Brand Is
 
-A tattoo artistry brand that is unapologetically rooted in Christian faith.
-The work is sacred. The canvas is skin. The artist is young, talented,
-disciplined, and grounded in conviction. The brand exists where craft becomes
-calling, and calling becomes worship. It is a flag planted in a space the
-church doesn't usually enter — not to preach, but to love people where they
-are.
+Art for things that move — skin, skis, snowboards, the canvases people
+carry with them. Rooted in Christian faith, not as marketing but as the
+reason the work exists. The artist is young, talented, disciplined, and
+grounded in conviction. The brand exists where craft becomes calling, and
+calling becomes worship.
 
 Sacred work, inscribed on skin.
